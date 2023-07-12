@@ -48,10 +48,10 @@ export default TabMenu;
 const MenuContainer = styled.footer`
   width: 100%;
   position: fixed;
-  border-top: 0.5px solid #dbdbdb;
+  border-top: 0.5px solid ${({ theme }) => theme.border};
   bottom: 0%;
   padding: 12px 0 10px;
-  background-color: #ffffff;
+  background-color: ${({ theme }) => theme.bgColor};
 `;
 
 const ListContainer = styled.ul`

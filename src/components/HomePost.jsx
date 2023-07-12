@@ -65,12 +65,16 @@ function HomePost({ postItem }) {
         </TitleContainer>
         <ContContainer>
           <Cont>{postData.content}</Cont>
-          {!!postData.image && <ImageSlider image={postData.image} postId={postData.id} />}
+          {!!postData.image && (
+            <ImageSlider image={postData.image} postId={postData.id} />
+          )}
           <ReactContainer>
             <IconContainer>
               <HeartIcon
                 toggle={postData.hearted}
-                onClick={postData.hearted ? handleUnHeartClick : handleHeartClick}
+                onClick={
+                  postData.hearted ? handleUnHeartClick : handleHeartClick
+                }
               />
               {postData.heartCount}
             </IconContainer>
@@ -81,7 +85,7 @@ function HomePost({ postItem }) {
               </IconContainer>
             </Link>
           </ReactContainer>
-          <Date>{createdAt}</Date>
+          <p>{createdAt}</p>
         </ContContainer>
       </PostContainer>
     </>
@@ -95,7 +99,7 @@ const PostContainer = styled.section`
   flex-direction: column;
   width: 100%;
   max-width: 358px;
-  background-color: #ffffff;
+  background-color: ${({ theme }) => theme.bgColor};
 `;
 const TitleContainer = styled.div`
   display: flex;
@@ -124,11 +128,11 @@ const ContContainer = styled.div`
 const UserName = styled.h3`
   font-size: 1.4rem;
   margin-bottom: 5px;
+  color: ${({ theme }) => theme.highlightFont};
 `;
 
 const UserID = styled.span`
   font-size: 1.2rem;
-  color: #767676;
 `;
 
 const Cont = styled.p`
@@ -146,7 +150,6 @@ const IconContainer = styled.span`
   align-items: center;
   margin-right: 10px;
   font-size: 1.2rem;
-  color: #767676;
 `;
 
 const HeartIcon = styled(IconHeart)`
@@ -159,8 +162,4 @@ const CommentIcon = styled(IconComment)`
   width: 20px;
   margin-right: 10px;
   cursor: pointer;
-`;
-
-const Date = styled.p`
-  color: #767676;
 `;

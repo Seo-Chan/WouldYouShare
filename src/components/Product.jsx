@@ -8,7 +8,9 @@ function Product({ productData }) {
   const dispatch = useDispatch();
 
   function handleModalOpen() {
-    dispatch(OPEN_MAIN_MODAL({ modalType: "PRODUCT_MODAL", target: productData }));
+    dispatch(
+      OPEN_MAIN_MODAL({ modalType: "PRODUCT_MODAL", target: productData })
+    );
   }
 
   return (
@@ -20,7 +22,9 @@ function Product({ productData }) {
           onError={(e) => (e.target.src = onImageError)}
         />
         <ProductName>{productData.itemName}</ProductName>
-        <ProductPrice>시간당 {productData.price.toLocaleString()}원</ProductPrice>
+        <ProductPrice>
+          시간당 {productData.price.toLocaleString()}원
+        </ProductPrice>
       </figure>
     </Container>
   );
@@ -48,5 +52,5 @@ const ProductName = styled.figcaption`
 const ProductPrice = styled.figcaption`
   font-size: 1.2rem;
   margin: 0 5px;
-  color: var(--mainColor);
+  color: ${({ theme }) => theme.colorFont};
 `;

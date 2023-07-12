@@ -15,7 +15,7 @@ const TextActiveInputContainer = styled.form`
   width: 100%;
   display: flex;
   flex-direction: column;
-  background-color: #ffffff;
+  background-color: ${({ theme }) => theme.bgColor};
 `;
 
 const TextActiveInputLabel = styled.label`
@@ -26,7 +26,7 @@ const TextActiveInputLabel = styled.label`
 
 const ActiveInput = styled.input`
   border: none;
-  border-bottom: 1px solid #dbdbdb;
+  border-bottom: 1px solid ${({ theme }) => theme.border};
   padding: 10px 0 8px;
   font-family: inherit;
   font-size: 1.4rem;

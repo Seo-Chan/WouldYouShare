@@ -50,5 +50,5 @@ const ProfileContainer = styled.section`
   height: 100vh;
   margin-top: 48px;
   margin-bottom: 61px;
-  background-color: #f2f2f2;
+  background-color: ${({ theme }) => theme.border};
 `;

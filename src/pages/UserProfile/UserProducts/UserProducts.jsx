@@ -29,9 +29,8 @@ export default UserProducts;
 const Container = styled.article`
   width: 100%;
   padding: 20px 0px 20px 16px;
-  background-color: #ffffff;
+  background-color: ${({ theme }) => theme.bgColor};
   margin-bottom: 6px;
-  border: 0.5px solid #dbdbdb;
   display: flex;
   justify-content: center;
 `;
@@ -44,6 +43,7 @@ const Title = styled.h2`
   font-weight: 700;
   font-size: 1.6rem;
   line-height: 2rem;
+  color: ${({ theme }) => theme.highlightFont};
 `;
 
 const ProductsList = styled.ul`

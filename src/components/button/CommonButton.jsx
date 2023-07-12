@@ -5,7 +5,15 @@ import styled from "styled-components";
  * @param {{size: "lg"|"md"|"ms"|"sm" ; fontColor: "selectColor" ; bgColor: "main"|"accent"|"light"|"white";  onClick: "eventprops" ; disabled: "false"|"true" ; children: "buttonText"}} param0
  * @returns
  */
-function CommonButton({ size, fontColor, bgColor, onClick, disabled, children, ...rest }) {
+function CommonButton({
+  size,
+  fontColor,
+  bgColor,
+  onClick,
+  disabled,
+  children,
+  ...rest
+}) {
   return (
     <ButtonContainer
       size={size}
@@ -79,7 +87,8 @@ const ButtonContainer = styled.button`
         return "30px";
     }
   }};
-  border: ${(props) => (props.bgColor === "white" ? "1px solid #dbdbdb" : "none")};
+  border: ${(props) =>
+    props.bgColor === "white" ? "1px solid #dbdbdb" : "none"};
   font-family: inherit;
   font-weight: ${(props) => (props.size === "sm" ? "400" : "500")};
 
@@ -89,15 +98,15 @@ const ButtonContainer = styled.button`
   background-color: ${(props) => {
     switch (props.bgColor) {
       case "main":
-        return "var(--mainColor)";
+        return props.theme.button;
       case "accent":
-        return "var(--accentColor) ";
+        return props.theme.accentColor;
       case "light":
-        return "var(--lightColor)";
+        return props.theme.disabledButton;
       case "white":
-        return "white";
+        return props.theme.bgColor;
       default:
-        return "var(--mainColor)";
+        return props.theme.mainColor;
     }
   }};
   cursor: pointer;

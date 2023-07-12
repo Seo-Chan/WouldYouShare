@@ -28,7 +28,7 @@ const Container = styled.div`
   height: 48px;
   padding: 0 16px;
   border-bottom: 0.5px solid #dbdbdb;
-  background-color: #ffffff;
+  background-color: ${({ theme }) => theme.bgColor};
   z-index: 10;
 `;
 const Back = styled(Link)`

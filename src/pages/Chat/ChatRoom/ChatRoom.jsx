@@ -32,9 +32,19 @@ function ChatRoom() {
           user="friend"
         />
         <ChatRoomChat chattext="네 말씀하세요." chattime="12:50" user="my" />
-        <ChatRoomChat chattext="네 말씀하세요." chattime="12:50" user="my" imges={profileImg} />
+        <ChatRoomChat
+          chattext="네 말씀하세요."
+          chattime="12:50"
+          user="my"
+          imges={profileImg}
+        />
       </ChatRoomContainer>
-      <Comment size={true} img={"upload"} placeholder="메시지 입력하기..." btn="전송" />
+      <Comment
+        size={true}
+        img={"upload"}
+        placeholder="메시지 입력하기..."
+        btn="전송"
+      />
     </main>
   );
 }

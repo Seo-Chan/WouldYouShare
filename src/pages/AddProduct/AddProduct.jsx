@@ -160,7 +160,7 @@ const EditProfileContainer = styled.form`
 const ProductContainer = styled.section`
   width: 322px;
   margin-top: 30px;
-  color: #767676;
+  color: ${({ theme }) => theme.fontColor};
   font-weight: 400;
   font-size: 12px;
 `;

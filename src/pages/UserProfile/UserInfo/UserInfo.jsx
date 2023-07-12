@@ -65,9 +65,8 @@ const Container = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #ffffff;
+  background-color: ${({ theme }) => theme.bgColor};
   margin-bottom: 6px;
-  border: 0.5px solid #dbdbdb;
 `;
 
 const FollowerInfo = styled.div`
@@ -86,12 +85,9 @@ const FollowerInfo = styled.div`
     font-weight: 400;
     font-size: 1rem;
     line-height: 1.2rem;
-    color: #767676;
   }
 `;
-const FollowingInfo = styled(FollowerInfo)`
-  color: #767676;
-`;
+const FollowingInfo = styled(FollowerInfo)``;
 const RowContainer = styled.div`
   display: flex;
   justify-content: center;
@@ -105,18 +101,17 @@ const UserNicname = styled.strong`
   font-size: 1.6rem;
   line-height: 2rem;
   margin-top: 16px;
+  color: ${({ theme }) => theme.highlightFont};
 `;
 const UserId = styled.p`
   font-weight: 400;
   font-size: 1.2rem;
   line-height: 1.4rem;
-  color: #767676;
   margin-top: 6px;
 `;
 const UserDescription = styled.p`
   font-weight: 400;
   font-size: 1.4rem;
   line-height: 1.84rem;
-  color: #767676;
   margin-top: 16px;
 `;

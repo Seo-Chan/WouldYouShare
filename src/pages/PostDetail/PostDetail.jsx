@@ -41,11 +41,18 @@ function PostDetail() {
           <CommentContainer>
             <h2 className="ir-hidden">댓글창</h2>
             {comments &&
-              comments.map((comment) => <CommentItem key={comment.id} comment={comment} />)}
+              comments.map((comment) => (
+                <CommentItem key={comment.id} comment={comment} />
+              ))}
           </CommentContainer>
         </MainContainer>
       )}
-      <Comment img={userInfo.image} placeholder="댓글 입력하기..." btn="게시" postId={post.id} />
+      <Comment
+        img={userInfo.image}
+        placeholder="댓글 입력하기..."
+        btn="게시"
+        postId={post.id}
+      />
     </>
   );
 }
@@ -58,7 +65,7 @@ const MainContainer = styled.main`
   margin-bottom: 61px;
 `;
 const PostContainer = styled.section`
-  border-top: 1px solid #dbdbdb;
+  border-top: 1px solid ${({ theme }) => theme.border};
   width: 100%;
   padding: 20px 16px;
   display: flex;
@@ -66,7 +73,7 @@ const PostContainer = styled.section`
 `;
 
 const CommentContainer = styled.section`
-  border-top: 1px solid #dbdbdb;
+  border-top: 1px solid ${({ theme }) => theme.border};
   width: 100%;
   display: flex;
   flex-direction: column;

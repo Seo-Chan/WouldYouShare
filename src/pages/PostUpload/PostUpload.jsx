@@ -78,7 +78,8 @@ function PostUpload() {
 
   // 서버로 이미지 보내기
   const getImageUrls = async () => {
-    if (imageList.length === 0) throw new Error("등록된 미리보기 이미지가 없습니다");
+    if (imageList.length === 0)
+      throw new Error("등록된 미리보기 이미지가 없습니다");
     const formData = new FormData();
     for (const image of imageList) {
       formData.append("image", dataURLtoFile(image.result, image.filename));
@@ -88,7 +89,9 @@ function PostUpload() {
     const isArray = Array.isArray(imgData);
     if (!isArray) throw new Error(imgData.message);
 
-    const imgURLtoString = imgData.map((d) => `${BASE_URL}/${d.filename}`).join(",");
+    const imgURLtoString = imgData
+      .map((d) => `${BASE_URL}/${d.filename}`)
+      .join(",");
 
     return imgURLtoString;
   };
@@ -148,7 +151,11 @@ function PostUpload() {
                     }
                   />
                   <DeleteBtn
-                    onClick={() => setImageList((prev) => prev.filter((a) => a.id !== img.id))}
+                    onClick={() =>
+                      setImageList((prev) =>
+                        prev.filter((a) => a.id !== img.id)
+                      )
+                    }
                   >
                     <IconDelete />
                   </DeleteBtn>
@@ -207,6 +214,8 @@ const Textarea = styled.textarea`
   &::placeholder {
     color: #c4c4c4;
   }
+  background-color: ${({ theme }) => theme.bgColor};
+  color: ${({ theme }) => theme.fontColor};
 `;
 
 const ImageList = styled.ol`

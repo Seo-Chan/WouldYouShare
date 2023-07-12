@@ -45,7 +45,7 @@ const CheckOnline = styled.div`
 
 const UserSearchContainer = styled(Link)`
   padding: 2px 0 3px 0;
-  background-color: #ffffff;
+  background-color: ${({ theme }) => theme.bgColor};
   width: 100%;
   height: 42px;
   display: flex;
@@ -63,13 +63,13 @@ const UserFollowSmall = styled.small`
   margin-top: 7px;
   font-family: "LINESeedKR-Bd", sans-serif;
   font-weight: 400;
-  color: #767676;
+  color: ${({ theme }) => theme.fontColor};
 `;
 
 const ChatDateSpan = styled.p`
   margin-top: 26px;
   margin-left: auto;
-  color: #767676;
+  color: ${({ theme }) => theme.fontColor};
   font-family: "LINESeedKR-Bd", sans-serif;
   font-weight: 400;
   font-size: 10px;

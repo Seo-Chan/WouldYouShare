@@ -69,8 +69,7 @@ export default UserPost;
 
 const Container = styled.section`
   width: 100%;
-  background-color: white;
-  border: 0.5px solid #dbdbdb;
+  background-color: ${({ theme }) => theme.bgColor};
   padding-bottom: 14px;
 `;
 
@@ -82,7 +81,7 @@ const ViewModeContainer = styled.div`
   align-items: center;
   gap: 16px;
   padding-right: 16px;
-  border-bottom: 0.5px solid #dbdbdb;
+  border-bottom: 0.5px solid ${({ theme }) => theme.border};
 `;
 const PostContainer = styled.div`
   padding: 16px;

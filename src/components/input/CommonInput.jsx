@@ -17,22 +17,24 @@ const TextActiveInputContainer = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  background-color: #ffffff;
+  background-color: ${({ theme }) => theme.bgColor};
 `;
 
 const TextActiveInputLabel = styled.label`
   font-size: 1.2rem;
-  color: #767676;
+  color: ${({ theme }) => theme.fontColor};
   font-weight: 500;
   font-family: "Godo", sans-serif;
 `;
 
 const ActiveTextInput = styled.input`
+  background-color: ${({ theme }) => theme.bgColor};
   border: none;
-  border-bottom: 1px solid #dbdbdb;
+  border-bottom: 1px solid ${({ theme }) => theme.border};
   padding: 10px 0 8px;
   font-family: inherit;
   font-size: 1.4rem;
+  color: ${({ theme }) => theme.highlightFont};
   &::placeholder {
     color: #dbdbdb;
   }

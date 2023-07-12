@@ -34,8 +34,8 @@ const Container = styled.div`
   width: 100vw;
   height: 48px;
   padding: 0 12px 0 16px;
-  border-bottom: 0.5px solid #dbdbdb;
-  background-color: #ffffff;
+  border-bottom: 0.5px solid ${({ theme }) => theme.border};
+  background-color: ${({ theme }) => theme.bgColor};
   z-index: 10;
 `;
 
