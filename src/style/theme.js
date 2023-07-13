@@ -10,6 +10,7 @@ export const lightTheme = {
   disabledButton: "#B1D0E0",
   button: "#406882",
   border: "#f2f2f2",
+  shadow: "#d1d1d1",
 };
 
 export const darkTheme = {
@@ -24,6 +25,7 @@ export const darkTheme = {
   disabledButton: "#363f45",
   button: "#406882",
   border: "#363f45",
+  shadow: "#767676",
 };
 
 export const theme = {
